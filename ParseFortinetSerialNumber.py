@@ -6,7 +6,8 @@
 
 import argparse
 
-fortinet_serial_number_patterns = {
+# FortiGate ========================================
+fortigate_sns = {
     # FortiGate 20
     "FGT20A": "FortiGate 20A",
     "FGT20B": "FortiGate 20B",
@@ -43,7 +44,7 @@ fortinet_serial_number_patterns = {
     "FGT51E": "FortiGate 51E",
     "FGT51F": "FortiGate 51F",
     # FortiGate 60
-    "FGT60A": "FortiGate 60A", # https://community.fortinet.com/t5/Fortinet-Forum/Reset-admin-password-of-a-FortiWifi-60A/m-p/13860
+    "FGT60A": "FortiGate 60A",
     "FGT60B": "FortiGate 60B",
     "FGT60C": "FortiGate 60C",
     "FGT60D": "FortiGate 60D",
@@ -102,6 +103,13 @@ fortinet_serial_number_patterns = {
     "FG101D": "FortiGate 101D",
     "FG101E": "FortiGate 101E",
     "FG101F": "FortiGate 101F",
+    # FortiGate 111
+    "FG10AH": "FortiGate 111A",
+    "FG10BH": "FortiGate 111B",
+    "FG10CH": "FortiGate 111C",
+    "FG10DH": "FortiGate 111D",
+    "FG10EH": "FortiGate 111E",
+    "FG10FH": "FortiGate 111F",
     # FortiGate 140
     "FG140A": "FortiGate 140A",
     "FG140B": "FortiGate 140B",
@@ -151,6 +159,13 @@ fortinet_serial_number_patterns = {
     "FG310D": "FortiGate 310D",
     "FG310E": "FortiGate 310E",
     "FG310F": "FortiGate 310F",
+    # FortiGate 311
+    "FG311A": "FortiGate 311A",
+    "FG311B": "FortiGate 311B",
+    "FG311C": "FortiGate 311C",
+    "FG311D": "FortiGate 311D",
+    "FG311E": "FortiGate 311E",
+    "FG311F": "FortiGate 311F",
     # FortiGate 400
     "FG400A": "FortiGate 400A",
     "FG400B": "FortiGate 400B",
@@ -174,6 +189,14 @@ fortinet_serial_number_patterns = {
     "FGT6HD": "FortiGate 600D",
     "FGT6HE": "FortiGate 600E",
     "FGT6HF": "FortiGate 600F",
+    # FortiGate 800
+    "FGT800": "FortiGate 800",
+    "FG800A": "FortiGate 800A",
+    "FG800B": "FortiGate 800B",
+    "FG800C": "FortiGate 800C",
+    "FG800D": "FortiGate 800D",
+    "FG800E": "FortiGate 800E",
+    "FG800F": "FortiGate 800F",
     # FortiGate 900
     "FG900A": "FortiGate 900A",
     "FG900B": "FortiGate 900B",
@@ -188,7 +211,7 @@ fortinet_serial_number_patterns = {
     "FGT1KD": "FortiGate 1000D",
     "FGT1KE": "FortiGate 1000E",
     "FGT1KF": "FortiGate 1000F",
-    "FGT1KX": "FortiGate 1000X", # ?
+    "FGT1KX": "FortiGate 1000X",  # ?
     # FortiGate 1200
     "FG1K2A": "FortiGate 1000A",
     "FG1K2B": "FortiGate 1000B",
@@ -210,6 +233,8 @@ fortinet_serial_number_patterns = {
     "FG3K0D": "FortiGate 3000D",
     "FG3K0E": "FortiGate 3000E",
     "FG3K0F": "FortiGate 3000F",
+    # FortiGate 3016
+    "FGT3KB": "FortiGate 3016B",
     # FortiGate 3100
     "FG3K1A": "FortiGate 3100A",
     "FG3K1B": "FortiGate 3100B",
@@ -217,6 +242,13 @@ fortinet_serial_number_patterns = {
     "FG3K1D": "FortiGate 3100D",
     "FG3K1E": "FortiGate 3100E",
     "FG3K1F": "FortiGate 3100F",
+    # FortiGate 3200
+    "FG3K2A": "FortiGate 3200A",
+    "FG3K2B": "FortiGate 3200B",
+    "FG3K2C": "FortiGate 3200C",
+    "FG3K2D": "FortiGate 3200D",
+    "FG3K2E": "FortiGate 3200E",
+    "FG3K2F": "FortiGate 3200F",
     # FortiGate 3600
     "FG3K6A": "FortiGate 3600A",
     "FG3K6B": "FortiGate 3600B",
@@ -240,12 +272,18 @@ fortinet_serial_number_patterns = {
     "FG3K9F": "FortiGate 3900F",
     # FortiGate 3901
     "FG3K91": "FortiGate 3901",
+    # FortiGate 5001
+    "FG-5KB": "FortiGate 5001B",
+    "FG-5KC": "FortiGate 5001C",
+    "FG5AD1": "FortiGate 5001A-DW",
     # FortiGate Virtual Machines =======================
     "FGVM00": "FortiGate VM ",
     "FGVM02": "FortiGate VM ",
-    "FGVM2V": "FortiGate VM ",
+    "FGVM2V": "FortiGate VM "
+}
 
-    # FortiWifi ========================================
+# FortiWifi ======================================
+fortiwifi_sns = {
     # FortiWifi 20
     "FWF20A": "FortiWifi 20A",
     "FWF20B": "FortiWifi 20B",
@@ -304,6 +342,61 @@ fortinet_serial_number_patterns = {
     "FWF92D": "FortiWifi 92D",
 }
 
+# FortiMail ======================================
+fortimail_sns = {
+    # FortiMail 100
+    "FE-100": "FortiMail 100",
+    "FE100C": "FortiMail 100C",
+    # FortiMail 200
+    "FE200D": "FortiMail 200D",
+    # FortiMail 400
+    "FE-400": "FortiMail 400",
+    "FE400B": "FortiMail 400B",
+    # FortiMail 3000
+    "FE-3KD": "FortiMail 3000D",
+}
+
+# FortiManager ===================================
+fortimanager_sns = {
+    # FortiManager 100
+    "FMG100": "FortiManager 100",
+    # FortiManager 400
+    "FM400B": "FortiManager 400B",
+}
+
+# FortiAnalyzer ==================================
+fortianalyzer_sns = {
+    # FortiAnalyzer 100
+    "FL100B": "FortiAnalyzer 100B",
+    # FortiAnalyzer 200
+    "FL200D": "FortiAnalyzer 200D",
+    # FortiAnalyzer 800
+    "FL800B": "FortiAnalyzer 800B",
+}
+
+# FortiAP ========================================
+fortiap_sns = {
+    # FortiAP 220
+    "FAP22B": "FortiAP 220B",
+    # FortiAP 220
+    "FP221B": "FortiAP 221B",
+}
+
+# FortiAuthenticator =============================
+fortiauthenticator_sns = {
+    # FortiAuthenticator 200
+    "FAC2HD": "FortiAuthenticator 200D",
+}
+
+
+def dictmerge(srcdicts):
+    out = {}
+    for sd in srcdicts:
+        for key in sd.keys():
+            if key not in out.keys():
+                out[key] = sd[key]
+    return out
+
 
 def parse_forti_sn(sn, data, verbose=False):
     sn = sn.upper().strip()
@@ -330,6 +423,11 @@ def parseArgs():
 
 if __name__ == '__main__':
     options = parseArgs()
+
+    fortinet_serial_number_patterns = dictmerge([fortigate_sns, fortiwifi_sns, fortimail_sns, fortimanager_sns, fortianalyzer_sns, fortiap_sns, fortiauthenticator_sns])
+
+    if options.verbose:
+        print("[>] Loaded %d serial number patterns." % len(fortinet_serial_number_patterns.keys()))
 
     result = parse_forti_sn(options.serial, fortinet_serial_number_patterns, verbose=True)
 
