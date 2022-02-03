@@ -389,12 +389,19 @@ fortiauthenticator_sns = {
 }
 
 
-def dictmerge(srcdicts):
+def dictmerge(*srcdicts):
     out = {}
+    # On itere sur les dicts passés en param
     for sd in srcdicts:
+        # On itere sur lesclés de chaque dict
         for key in sd.keys():
+            # Si on ne la connait pas déjà, on crée la clé dans le dict de sortie
             if key not in out.keys():
                 out[key] = sd[key]
+            # Sinon, on vérifie la condition avant de l'ajouter (on l'ajoute que si elle est plus petite)
+            else:
+                if sd[key] < out[key]:
+                    out[key] = sd[key]
     return out
 
 
