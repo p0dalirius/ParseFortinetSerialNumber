@@ -1,12 +1,14 @@
 # ParseFortinetSerialNumber
 
 <p align="center">
+  A Python script to parse Fortinet products serial numbers, and detect the associated model and version.
+  <br>
+  <img src="https://badges.pufler.dev/visits/p0dalirius/ParseFortinetSerialNumber/"/>
   <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/p0dalirius/ParseFortinetSerialNumber">
   <a href="https://twitter.com/intent/follow?screen_name=podalirius_" title="Follow"><img src="https://img.shields.io/twitter/follow/podalirius_?label=Podalirius&style=social"></a>
   <br>
 </p>
 
-A Python script to parse Fortinet products serial numbers, and detect the associated model and version.
 
 ![](./.github/exemple.png)
 
