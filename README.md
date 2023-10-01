@@ -1,4 +1,4 @@
-# ParseFortinetSerialNumber
+![](./.github/banner.png)
 
 <p align="center">
   A Python script to parse Fortinet products serial numbers, and detect the associated model and revision.
